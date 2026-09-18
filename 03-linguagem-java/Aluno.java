@@ -2,25 +2,25 @@
 // String.format controla como o numero aparece. %.2f forca duas casas.
 // ATENCAO: repare na ultima linha da saida. O objeto aceitou um valor NEGATIVO.
 
-public class Aluno {
+public class Aluno { // classe: o molde do objeto
 
-    String nome;
-    double mensalidade;
+    String nome;        // atributo aberto (sem private)
+    double mensalidade; // atributo aberto: aceita qualquer valor
 
-    public Aluno(String nome, double mensalidade) {
+    public Aluno(String nome, double mensalidade) { // construtor: roda no "new"
         this.nome = nome;
-        this.mensalidade = mensalidade;
+        this.mensalidade = mensalidade; // grava direto, sem validar
     }
 
-    public String exibir() {
-        return String.format("%s | mensalidade: R$ %.2f", nome, mensalidade);
+    public String exibir() { // método: devolve os dados em texto
+        return String.format("%s | mensalidade: R$ %.2f", nome, mensalidade); // %.2f = 2 casas
     }
 
-    public static void main(String[] args) {
-        Aluno a1 = new Aluno("Ana Beatriz", 310.00);
+    public static void main(String[] args) { // método main: início do programa
+        Aluno a1 = new Aluno("Ana Beatriz", 310.00); // valor válido
         System.out.println(a1.exibir());
 
-        Aluno a2 = new Aluno("Teste", -50.00);
+        Aluno a2 = new Aluno("Teste", -50.00); // valor negativo: foi aceito!
         System.out.println(a2.exibir());
     }
 }
